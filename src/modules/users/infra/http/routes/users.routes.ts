@@ -4,7 +4,7 @@ import UserController from '../controllers/UsersController';
 import multer from 'multer';
 import uploadConfig from '@config/upload';
 import { celebrate, Joi, Segments } from 'celebrate';
-import isAuthenticaded from '@shared/http/middlewares/isAuthenticated';
+import isAuthenticaded from '@shared/infra/http/middlewares/isAuthenticated';
 import UserAvatarController from '../controllers/UserAvatarController';
 
 const usersRoutes = Router();

@@ -1,5 +1,5 @@
 import { getCustomRepository } from 'typeorm';
-import { UsersRepository } from '../typeorm/repositories/UserRepository';
+import { UsersRepository } from '../infra/typeorm/repositories/UserRepository';
 import AppError from '@shared/errors/AppError';
 import path from 'path';
 import uploadConfig from '@config/upload';

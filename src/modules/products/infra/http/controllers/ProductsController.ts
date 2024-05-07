@@ -1,8 +1,8 @@
-import ShowProductService from '../services/ShowProductService';
-import ListProductService from '../services/ListProductService';
-import CreateProductService from '../services/CreateProductService';
-import UpdateProductService from '../services/UpdateProductService';
-import DeleteProductService from '../services/DeleteProductService';
+import ShowProductService from '../../../services/ShowProductService';
+import ListProductService from '../../../services/ListProductService';
+import CreateProductService from '../../../services/CreateProductService';
+import UpdateProductService from '../../../services/UpdateProductService';
+import DeleteProductService from '../../../services/DeleteProductService';
 import { Request, Response } from 'express';
 
 export default class ProductsController {
