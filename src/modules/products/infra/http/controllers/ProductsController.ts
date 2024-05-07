@@ -4,6 +4,7 @@ import CreateProductService from '../../../services/CreateProductService';
 import UpdateProductService from '../../../services/UpdateProductService';
 import DeleteProductService from '../../../services/DeleteProductService';
 import { Request, Response } from 'express';
+import { ProductRepository } from '../../typeorm/repositories/ProductsRepository';
 
 export default class ProductsController {
   public async index(request: Request, response: Response): Promise<Response> {
@@ -33,7 +34,9 @@ export default class ProductsController {
   ): Promise<Response> {
     const { name, price, quantity } = request.body;
 
-    const createProduct = new CreateProductService();
+    const createProductRepository = new ProductRepository();
+
+    const createProduct = new CreateProductService(createProductRepository);
 
     const product = await createProduct.execute({ name, price, quantity });
 
