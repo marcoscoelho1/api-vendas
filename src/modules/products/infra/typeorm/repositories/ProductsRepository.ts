@@ -12,6 +12,22 @@ export class ProductRepository implements IProductsRepository {
     this.ormRepository = getRepository(Product);
   }
 
+  public async findById(id: string): Promise<IProduct | undefined> {
+    const product = this.ormRepository.findOne({
+      where: {
+        id,
+      },
+    });
+
+    return product;
+  }
+
+  public async find(): Promise<IProduct[]> {
+    const products = this.ormRepository.find();
+
+    return products;
+  }
+
   public async findByName(name: string): Promise<IProduct | undefined> {
     const product = this.ormRepository.findOne({
       where: {
@@ -37,5 +53,9 @@ export class ProductRepository implements IProductsRepository {
   public async save(product: IProduct): Promise<IProduct> {
     this.ormRepository.save(product);
     return product;
+  }
+
+  public async remove(product: IProduct): Promise<void> {
+    this.ormRepository.remove(product);
   }
 }
